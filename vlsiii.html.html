@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>VLSI Design Flow</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9faff;
+      color: #333;
+    }
+
+    header {
+      background-color: #004080;
+      color: #fff;
+      padding: 30px 20px;
+      text-align: center;
+    }
+
+    .definition {
+      background-color: #eef6fc;
+      padding: 20px;
+      text-align: center;
+      font-size: 1.1em;
+    }
+
+    .flow-chart {
+      text-align: center;
+      padding: 30px 10px;
+    }
+
+    .flow-vertical {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .flow-vertical button {
+      padding: 12px 18px;
+      background-color: #007acc;
+      color: white;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s;
+      width: 280px;
+    }
+
+    .flow-vertical button:hover {
+      background-color: #005fa3;
+    }
+
+    .arrow {
+      font-size: 24px;
+      color: #007acc;
+    }
+
+    .detail-section {
+      max-width: 800px;
+      margin: 20px auto;
+      background-color: #ffffff;
+      padding: 20px 24px;
+      border-radius: 10px;
+      box-shadow: 0 0 12px rgba(0, 0, 0, 0.08);
+    }
+
+    .contact-form {
+      background-color: #f0f4f7;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .contact-form form {
+      max-width: 400px;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .contact-form input {
+      padding: 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+      width: 100%;
+    }
+
+    .contact-form button {
+      padding: 12px;
+      background-color: #007acc;
+      color: white;
+      border: none;
+      font-size: 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    .contact-form button:hover {
+      background-color: #005fa3;
+    }
+
+    .success-message {
+      display: none;
+      text-align: center;
+      padding: 60px 20px;
+      font-size: 24px;
+      color: #005fa3;
+    }
+
+    footer {
+      background-color: #003366;
+      color: white;
+      text-align: center;
+      padding: 12px 0;
+      margin-top: 50px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>VLSI Design Flow</h1>
+  </header>
+
+  <section class="definition">
+    <p><strong>VLSI</strong> (Very-Large-Scale Integration) is the process of creating integrated circuits (ICs) by cramming tons of transistors onto a single chip. The VLSI design flow is a structured method for developing these complex circuits, from idea to finished product.</p>
+  </section>
+
+  <section class="flow-chart">
+    <h2>VLSI Design Flow Chart</h2>
+    <div class="flow-vertical">
+      <button onclick="scrollToSection('spec')">Specification & Architecture</button>
+      <div class="arrow">↓</div>
+      <button onclick="scrollToSection('concept')">Conceptual Design</button>
+      <div class="arrow">↓</div>
+      <button onclick="scrollToSection('rtl')">RTL Design</button>
+      <div class="arrow">↓</div>
+      <button onclick="scrollToSection('verification')">Functional Verification</button>
+      <div class="arrow">↓</div>
+      <button onclick="scrollToSection('synthesis')">Synthesis</button>
+      <div class="arrow">↓</div>
+      <button onclick="scrollToSection('physical')">Physical Design</button>
+      <div class="arrow">↓</div>
+      <button onclick="scrollToSection('dft')">Design for Testability</button>
+      <div class="arrow">↓</div>
+      <button onclick="scrollToSection('timing')">Timing Analysis & Closure</button>
+      <div class="arrow">↓</div>
+      <button onclick="scrollToSection('pvr')">Physical Verification</button>
+      <div class="arrow">↓</div>
+      <button onclick="scrollToSection('final')">Final Verification</button>
+      <div class="arrow">↓</div>
+      <button onclick="scrollToSection('mask')">Mask Generation</button>
+      <div class="arrow">↓</div>
+      <button onclick="scrollToSection('fab')">Fabrication</button>
+      <div class="arrow">↓</div>
+      <button onclick="scrollToSection('testing')">Testing & Packaging</button>
+      <div class="arrow">↓</div>
+      <button onclick="scrollToSection('post')">Post-Silicon Validation</button>
+    </div>
+  </section>
+
+  <section id="details">
+    <div id="spec" class="detail-section">
+      <h3>Specification and Architecture</h3>
+      <p>Define requirements and high-level architecture. Understand functionality, performance, power, area constraints, and target market.</p>
+    </div>
+    <div id="concept" class="detail-section">
+      <h3>Conceptual Design</h3>
+      <p>Create high-level representation using block diagrams and algorithmic descriptions. Focus on functionality and performance.</p>
+    </div>
+    <div id="rtl" class="detail-section">
+      <h3>RTL Design</h3>
+      <p>Write HDL (Verilog or VHDL) to describe digital logic — registers, gates, data paths.</p>
+    </div>
+    <div id="verification" class="detail-section">
+      <h3>Functional Verification</h3>
+      <p>Use simulation tools to ensure design matches the functionality from specification.</p>
+    </div>
+    <div id="synthesis" class="detail-section">
+      <h3>Synthesis</h3>
+      <p>Translate RTL into gate-level netlist. Optimize for performance, power, and area.</p>
+    </div>
+    <div id="physical" class="detail-section">
+      <h3>Physical Design</h3>
+      <p>Place and route logic onto the chip layout with floor planning and routing.</p>
+    </div>
+    <div id="dft" class="detail-section">
+      <h3>Design for Testability (DFT)</h3>
+      <p>Insert scan chains, BIST circuits to enable easier manufacturing test.</p>
+    </div>
+    <div id="timing" class="detail-section">
+      <h3>Timing Analysis and Closure</h3>
+      <p>Ensure design meets timing (clock, setup, hold). Perform iterative fixes.</p>
+    </div>
+    <div id="pvr" class="detail-section">
+      <h3>Physical Verification</h3>
+      <p>Check layout against manufacturing rules — spacing, width, density, etc.</p>
+    </div>
+    <div id="final" class="detail-section">
+      <h3>Final Verification</h3>
+      <p>Comprehensive functional and performance validation through simulations or prototypes.</p>
+    </div>
+    <div id="mask" class="detail-section">
+      <h3>Mask Generation</h3>
+      <p>Generate masks used in lithography for silicon patterning.</p>
+    </div>
+    <div id="fab" class="detail-section">
+      <h3>Fabrication</h3>
+      <p>Manufacture ICs using lithography, etching, doping, and metallization in a fab.</p>
+    </div>
+    <div id="testing" class="detail-section">
+      <h3>Testing and Packaging</h3>
+      <p>Test chips, discard failures, and package successful ICs for deployment.</p>
+    </div>
+    <div id="post" class="detail-section">
+      <h3>Post-Silicon Validation</h3>
+      <p>Test real chips in real environments to verify final performance.</p>
+    </div>
+  </section>
+
+  <section class="contact-form">
+    <h2>For Full Course Access</h2>
+    <p>Fill the form below. Our team will contact you soon!</p>
+    <form id="contactForm">
+      <input type="text" placeholder="Your Name" required>
+      <input type="tel" placeholder="Phone Number" required>
+      <input type="email" placeholder="Email Address" required>
+      <button type="submit">Submit</button>
+    </form>
+  </section>
+
+  <section class="success-message" id="successMessage">
+    <h2 id="line1"></h2>
+    <h2 id="line2"></h2>
+    <h2 id="line3"></h2>
+  </section>
+
+  <footer>
+    <p>All rights are reserved by Rishitha © 2025</p>
+  </footer>
+
+  <script>
+    function scrollToSection(id) {
+      document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+    }
+
+    document.getElementById('contactForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      document.querySelector('.contact-form').style.display = 'none';
+      document.getElementById('successMessage').style.display = 'block';
+      typeLine();
+    });
+
+    const messages = [
+      "Details sent successfully.",
+      "Our team will contact you soon.",
+      "Check your email for further details."
+    ];
+
+    const elements = [
+      document.getElementById("line1"),
+      document.getElementById("line2"),
+      document.getElementById("line3")
+    ];
+
+    let msgIndex = 0;
+    let charIndex = 0;
+
+    function typeLine() {
+      if (msgIndex < messages.length) {
+        let currentMessage = messages[msgIndex];
+        elements[msgIndex].innerHTML += currentMessage.charAt(charIndex);
+        charIndex++;
+        if (charIndex < currentMessage.length) {
+          setTimeout(typeLine, 50);
+        } else {
+          msgIndex++;
+          charIndex = 0;
+          setTimeout(typeLine, 700);
+        }
+      }
+    }
+  </script>
+</body>
+</html>
