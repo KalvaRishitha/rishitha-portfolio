@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kalva Rishitha - Portfolio</title>
+  <style>
+    :root {
+      --bg-color: #ffffff;
+      --text-color: #1a1a1a;
+      --primary-color: #6c5ce7;
+      --accent-color: #00cec9;
+      --header-bg: linear-gradient(to right, #6c5ce7, #00cec9);
+      --card-bg: #fdfdfd;
+      --footer-bg: #2d3436;
+    }
+
+    body.dark {
+      --bg-color: #121212;
+      --text-color: #e5e5e5;
+      --header-bg: linear-gradient(to right, #2d3436, #00cec9);
+      --card-bg: #1e1e1e;
+      --footer-bg: #000000;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--bg-color);
+      color: var(--text-color);
+      line-height: 1.6;
+      scroll-behavior: smooth;
+      transition: all 0.3s ease-in-out;
+    }
+
+    header {
+      background: var(--header-bg);
+      color: white;
+      text-align: center;
+      padding: 3rem 1rem;
+      animation: slideInTop 1s ease-out;
+    }
+
+    @keyframes slideInTop {
+      from { transform: translateY(-100%); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    .theme-toggle {
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+      background: var(--accent-color);
+      color: white;
+      border: none;
+      padding: 0.6rem 1.2rem;
+      border-radius: 20px;
+      cursor: pointer;
+      z-index: 1000;
+      font-weight: bold;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 2rem;
+      animation: fadeIn 1s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    h2 {
+      color: var(--primary-color);
+      margin: 2rem 0 1rem;
+      font-size: 1.75rem;
+      position: relative;
+    }
+
+    h2::after {
+      content: '';
+      width: 50px;
+      height: 4px;
+      background: var(--accent-color);
+      display: block;
+      margin-top: 8px;
+      border-radius: 10px;
+    }
+
+    section {
+      margin-bottom: 2rem;
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    ul li::before {
+      content: "\2022";
+      color: var(--accent-color);
+      font-weight: bold;
+      display: inline-block;
+      width: 1em;
+      margin-left: -1em;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: 12px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+      padding: 1.5rem;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-7px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    footer {
+      background: var(--footer-bg);
+      color: #fff;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+
+    #scrollToTopBtn {
+      display: none;
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: var(--accent-color);
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 50%;
+      font-size: 18px;
+      cursor: pointer;
+      z-index: 999;
+    }
+
+    @media(max-width: 600px) {
+      header, .container, footer {
+        padding: 1rem;
+      }
+
+      .theme-toggle {
+        font-size: 14px;
+        padding: 0.4rem 0.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <button class="theme-toggle" onclick="toggleTheme()">🌓 Toggle Mode</button>
+  <header>
+    <h1>Kalva Rishitha</h1>
+    <p>Frontend Developer • IoT Enthusiast • Python Programmer</p>
+  </header>
+
+  <div class="container">
+    <section>
+      <h2>Contact</h2>
+      <ul>
+        <li>📞 +91 8074036408</li>
+        <li>📧 Kalvarishitha079@gmail.com</li>
+        <li>📍 Kota Street, Nandyal, 518501</li>
+        <li>🔗 <a href="https://www.linkedin.com/in/rishitha-k-680535234" target="_blank">LinkedIn</a></li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Education</h2>
+      <ul>
+        <li>B.Tech - Ashoka Women’s Engineering College (CGPA: 8.88)</li>
+        <li>Diploma - ESC Govt. Polytechnic College (CGPA: 9.9)</li>
+        <li>10th - Ravindra English Medium High School (CGPA: 10)</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Career Objective</h2>
+      <p>I’m seeking a challenging role where I can apply my skills for the growth of the organization and my professional development. I’m a team player with strong problem-solving and communication abilities.</p>
+    </section>
+
+    <section>
+      <h2>Technical Skills</h2>
+      <ul>
+        <li>Python, C</li>
+        <li>HTML, CSS (Basics)</li>
+        <li>Arduino UNO, SPI Controller</li>
+        <li>GitHub</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Personal Skills</h2>
+      <ul>
+        <li>Communication</li>
+        <li>Team Management</li>
+        <li>Self-Motivated</li>
+        <li>Leadership Qualities</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Projects</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Smart College System</h3>
+          <p>IoT-enabled automation system using Arduino UNO. Selected at district/state-level tech fests.</p>
+        </div>
+        <div class="card">
+          <h3>Weather Station Display</h3>
+          <p>Weather monitoring system using P10 LED display and SPI controller.</p>
+        </div>
+        <div class="card">
+          <h3>Full-Stack To-Do List</h3>
+          <p>Python-based task management app with CRUD features.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Certifications & Achievements</h2>
+      <ul>
+        <li>Certified in Python and Machine Learning (Internship)</li>
+        <li>NPTEL Certification in Computer Architecture – 61%</li>
+        <li>Smart India Hackathon participant</li>
+        <li>College-level event winner in technical presentations</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Languages</h2>
+      <ul>
+        <li>Telugu (Native)</li>
+        <li>English (Fluent)</li>
+        <li>Hindi (Conversational)</li>
+      </ul>
+    </section>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Kalva Rishitha. Designed with ❤️ and innovation.</p>
+  </footer>
+
+  <button onclick="scrollToTop()" id="scrollToTopBtn">↑</button>
+
+  <script>
+    // Theme toggle
+    function toggleTheme() {
+      document.body.classList.toggle('dark');
+    }
+
+    // Scroll to top button
+    const scrollBtn = document.getElementById("scrollToTopBtn");
+
+    window.onscroll = () => {
+      scrollBtn.style.display = document.documentElement.scrollTop > 100 ? "block" : "none";
+    };
+
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script>
+</body>
+</html>
